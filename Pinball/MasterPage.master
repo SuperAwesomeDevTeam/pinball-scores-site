@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Pinball Highscores</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <meta http-equiv="EXPIRES" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-cookie.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <%-- <form id="form1" runat="server">--%>
+    <span id="pageTitle" style="display: none;">
+        <asp:ContentPlaceHolder runat="server" ID="PageTitleHolder">
+        </asp:ContentPlaceHolder>
+    </span>
+
+    <div class="navbar navbar-inverse no-bottom-margin" id="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/Default.aspx">
+                    <img src="img/pinball-logo.png" alt="Cobweb" />
+                </a>
+                <div class="pull-right">
+                    <ul class="nav">
+                        <li style="margin-right: 0px;"><a href="#" target="_blank">Linky</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <asp:ContentPlaceHolder runat="server" ID="MainContentHolder_SUPER">
+        <div class="container-fluid" style="margin-top: 24px;">
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="alert alert-block alert-error fade in" id="alert-container" style="margin-left: 2.127659574468085%; display: none;">
+                            <button type="button" class="close" id="alert-close">&times;</button>
+                            <h4 class="alert-heading" id="alert-title">Oh snap! You got an error!</h4>
+                            <p id="alert-message">Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                        </div>
+
+                        <!--Body content-->
+                        <asp:ContentPlaceHolder runat="server" ID="MainContentHolder">
+                        </asp:ContentPlaceHolder>
+                        <!--END BODY-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:ContentPlaceHolder>
+    <section id="footer" runat="server"></section>
+    <%--</form>--%>
+
+    <asp:ContentPlaceHolder runat="server" ID="BodyScripts">
+    </asp:ContentPlaceHolder>
+
+
+</body>
+</html>
